@@ -81,27 +81,41 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
                       future: _shortenUrl,
                       builder: (context, snapshot) {
                         if (snapshot.hasData) {
-                          return InkWell(
-                            onTap: () {
-                              Clipboard.setData(
-                                ClipboardData(
-                                    text:
-                                        'https://${snapshot.data!.shortenUrl}'),
-                              );
-                              Toast.show(
-                                'Url copied to clipboard',
-                                duration: Toast.lengthLong,
-                                gravity: Toast.bottom,
-                              );
-                            },
-                            child: Text(
-                              snapshot.data!.shortenUrl,
-                              style: TextStyle(
-                                fontWeight: FontWeight.w400,
-                                color: Colors.blue.shade800,
-                                fontSize: 35,
+                          return Container(
+                            height: 50,
+                            width: double.infinity,
+                            decoration: ShapeDecoration(
+                              color: Colors.grey.shade50,
+                              shape: const StadiumBorder(
+                                side: BorderSide(
+                                  color: Colors.grey,
+                                ),
                               ),
-                              textAlign: TextAlign.center,
+                            ),
+                            child: ListTile(
+                              onTap: () {
+                                Clipboard.setData(
+                                  ClipboardData(
+                                      text:
+                                          'https://${snapshot.data!.shortenUrl}'),
+                                );
+                                Toast.show(
+                                  'Link copied to clipboard',
+                                  duration: Toast.lengthLong,
+                                  gravity: Toast.bottom,
+                                );
+                              },
+                              title: Text(
+                                snapshot.data!.shortenUrl,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.grey.shade700,
+                                  fontSize: 22,
+                                ),
+                                textAlign: TextAlign.left,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                              trailing: const Icon(Icons.copy_outlined),
                             ),
                           );
                         } else if (snapshot.hasError) {
