@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:lottie/lottie.dart';
+import 'package:toast/toast.dart';
 import '../../apis/url_shortener_apis.dart';
 import '../../models/shorten_url.dart';
 import '../../constants.dart';
-import 'dart:js' as js;
 
 class DesktopHomePage extends StatefulWidget {
   const DesktopHomePage({super.key});
@@ -82,8 +83,16 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
                         if (snapshot.hasData) {
                           return InkWell(
                             onTap: () {
-                              js.context.callMethod('open',
-                                  ['https://${snapshot.data!.shortenUrl}']);
+                              Clipboard.setData(
+                                ClipboardData(
+                                    text:
+                                        'https://${snapshot.data!.shortenUrl}'),
+                              );
+                              Toast.show(
+                                'Url copied to clipboard',
+                                duration: Toast.lengthLong,
+                                gravity: Toast.bottom,
+                              );
                             },
                             child: Text(
                               snapshot.data!.shortenUrl,
