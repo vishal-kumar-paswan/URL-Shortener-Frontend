@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:toast/toast.dart';
 import 'package:url_shortener_frontend/views/mobile/about.dart';
-import 'dart:js' as js;
 import '../../apis/url_shortener_apis.dart';
 import '../../models/shorten_url.dart';
-import '../mobile/about.dart';
 import '../../constants.dart';
 
 class MobileHomePage extends StatefulWidget {
@@ -79,8 +79,15 @@ class _MobileHomePageState extends State<MobileHomePage> {
                     if (snapshot.hasData) {
                       return InkWell(
                         onTap: () {
-                          js.context.callMethod(
-                              'open', ['https://${snapshot.data!.shortenUrl}']);
+                          Clipboard.setData(
+                            ClipboardData(
+                                text: 'https://${snapshot.data!.shortenUrl}'),
+                          );
+                          Toast.show(
+                            'Url copied to clipboard',
+                            duration: Toast.lengthLong,
+                            gravity: Toast.bottom,
+                          );
                         },
                         child: Text(
                           snapshot.data!.shortenUrl,
