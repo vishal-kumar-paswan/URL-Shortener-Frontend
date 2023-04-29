@@ -141,8 +141,8 @@ class _MobileHomePageState extends State<MobileHomePage> {
                 },
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(
-                    horizontal: 40.0,
-                    vertical: 20.0,
+                    horizontal: 38.0,
+                    vertical: 18.0,
                   ),
                   backgroundColor: Constants.accentColor,
                   shape: const StadiumBorder(),
@@ -158,8 +158,8 @@ class _MobileHomePageState extends State<MobileHomePage> {
                 onPressed: _fetchshortenUrl,
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(
-                    horizontal: 40.0,
-                    vertical: 20.0,
+                    horizontal: 38.0,
+                    vertical: 18.0,
                   ),
                   backgroundColor: Constants.accentColor,
                   shape: const StadiumBorder(),
