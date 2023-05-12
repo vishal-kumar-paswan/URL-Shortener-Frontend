@@ -6,13 +6,13 @@ import '../../apis/url_shortener_apis.dart';
 import '../../models/shorten_url.dart';
 import '../../constants.dart';
 
-class MobileHomePage extends StatefulWidget {
-  const MobileHomePage({super.key});
+class Mobile extends StatefulWidget {
+  const Mobile({super.key});
   @override
-  State<MobileHomePage> createState() => _MobileHomePageState();
+  State<Mobile> createState() => _MobileState();
 }
 
-class _MobileHomePageState extends State<MobileHomePage> {
+class _MobileState extends State<Mobile> {
   final _urlController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
   Future<ShortenUrlModel>? _shortenUrl;

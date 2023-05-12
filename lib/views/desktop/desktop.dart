@@ -6,14 +6,14 @@ import '../../apis/url_shortener_apis.dart';
 import '../../models/shorten_url.dart';
 import '../../constants.dart';
 
-class DesktopHomePage extends StatefulWidget {
-  const DesktopHomePage({super.key});
+class Desktop extends StatefulWidget {
+  const Desktop({super.key});
 
   @override
-  State<DesktopHomePage> createState() => _DesktopHomePageState();
+  State<Desktop> createState() => _DesktopState();
 }
 
-class _DesktopHomePageState extends State<DesktopHomePage> {
+class _DesktopState extends State<Desktop> {
   final _urlController = TextEditingController();
 
   final _formKey = GlobalKey<FormState>();
@@ -45,14 +45,14 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
             mainAxisSize: MainAxisSize.max,
             children: [
               Transform.scale(
-                scale: 0.8,
+                scale: 0.79,
                 child: Lottie.asset('assets/link.json'),
               ),
               const Text(
                 'Create a tiny link\nwithin seconds',
                 style: TextStyle(
                   fontWeight: FontWeight.w700,
-                  fontSize: 45,
+                  fontSize: 43,
                 ),
                 textAlign: TextAlign.center,
               ),
