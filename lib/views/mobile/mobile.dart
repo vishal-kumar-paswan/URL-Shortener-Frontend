@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:toast/toast.dart';
-import 'package:url_shortener_frontend/views/mobile/about.dart';
+import 'package:url_shortener_frontend/views/about.dart';
 import '../../apis/url_shortener_apis.dart';
 import '../../models/shorten_url.dart';
 import '../../constants.dart';

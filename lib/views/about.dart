@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../constants.dart';
+import '../constants.dart';
 
 class About extends StatelessWidget {
   const About({super.key});
@@ -32,7 +32,7 @@ class About extends StatelessWidget {
             ),
             SizedBox(height: 10),
             Text(
-              'Version 1.0',
+              'Version 1.1',
               style: TextStyle(
                 fontSize: 17,
                 fontWeight: FontWeight.w400,
